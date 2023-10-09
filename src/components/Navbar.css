@@ -1,0 +1,137 @@
+.navbar{
+    background-color: #091d35;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 15px;
+    color: white;
+}
+
+.nav_items a {
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 15px;
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav_list{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    border: 1px solid white;
+    list-style: none;
+}
+
+.nav_listItem_subItems{
+    max-height: 0;
+    overflow: hidden;
+    color: white;
+    list-style: none;
+}
+
+.nav_listItem_subItems-active{
+    background-color: #091d35;
+    max-height: 300px;
+    border: 1px solid white;
+}
+
+.nav_items a:hover{
+    transition: all 0.3s;
+    border-bottom: 1px solid #E50E0B;
+    color: #E50E0B;
+}
+
+.subItems{
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 10px;
+    transition: all 0.6s ease-in;
+    color: white;
+}
+
+.subItems:hover{
+    background-color: #a8211f;
+    border-radius: 10px;
+}
+
+.nav_toggle{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    
+    .nav_items{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #091d35;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400px;
+        transform: translateX(-100%);
+        transition: 0.3s ease all;
+    }
+
+    .nav_list{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    .nav_items.open{
+        transform: translateX(0) !important;
+    }
+
+    .nav_listItem_subItems{
+        overflow: hidden;
+    }
+    
+    .nav_listItem_subItems-active{
+        background-color: #091d35;
+        max-height: 300px;
+    }
+
+    .nav_toggle{
+        display: flex !important;
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .nav_toggle span{
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transform-origin: 5px 0px;
+        transition: all 0.2s linear;
+    }
+
+    .nav_toggle.open > span {
+        transform: rotate(45deg) translate(0px, 0px);
+    }
+
+    .nav_toggle.open > span:nth-child(2){
+        display: none;
+    }
+
+    .nav_toggle.open > span:nth-child(3){
+        transform: rotate(-45deg) translate(-5px, 1px);
+    }
+
+    
+
+
+
+}
+
